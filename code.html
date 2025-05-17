@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptriOnAI - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&family=Roboto:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-deep-teal: #005A72;
+            --primary-bright-cyan: #00C2D1;
+            --secondary-navy: #17293A;
+            --accent-orange: #FF7A00;
+            --neutral-light-gray: #F4F6F8;
+            --neutral-medium-gray: #A3AFC0;
+            --neutral-dark-gray: #4A5864;
+
+            --font-headings: 'Poppins', sans-serif;
+            --font-subheadings: 'Source Sans Pro', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--neutral-light-gray);
+            color: var(--neutral-medium-gray);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            width: 100%;
+            animation: fadeInScaleUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInScaleUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .logo {
+            max-width: 250px;
+            width: 70%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-headings);
+            font-size: 2.8rem;
+            color: var(--secondary-navy);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h2.subtitle {
+            font-family: var(--font-subheadings);
+            font-size: 1.5rem;
+            color: var(--primary-deep-teal);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--neutral-dark-gray);
+            margin-bottom: 20px; /* Adjusted margin for paragraph spacing */
+        }
+
+        .highlight {
+            color: var(--primary-bright-cyan);
+            font-weight: 500;
+        }
+
+        .accent-text {
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--neutral-light-gray); /* Subtle separator */
+        }
+
+        .contact-heading {
+            font-family: var(--font-subheadings);
+            font-size: 1.3rem;
+            color: var(--secondary-navy);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .phone-number {
+            font-size: 1.1rem;
+            color: var(--neutral-dark-gray);
+            margin-bottom: 0; /* Remove bottom margin if it's the last item in contact-info */
+        }
+
+        .contact-link {
+            color: var(--primary-bright-cyan);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+            color: var(--primary-deep-teal);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: var(--neutral-medium-gray);
+        }
+
+        .footer a {
+            color: var(--primary-deep-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            color: var(--primary-bright-cyan);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2.subtitle {
+                font-size: 1.3rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .logo {
+                max-width: 200px;
+            }
+            .contact-heading {
+                font-size: 1.2rem;
+            }
+            .phone-number {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2.subtitle {
+                font-size: 1.1rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+            .logo {
+                max-width: 180px;
+            }
+             .contact-heading {
+                font-size: 1.1rem;
+            }
+            .phone-number {
+                font-size: 0.95rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="images/optrionai.png" alt="OptriOnAI Logo" class="logo">
+        <h1>Coming Soon!</h1>
+        <h2 class="subtitle">Something <span class="highlight">Amazing</span> is on its Way</h2>
+        <p>
+            We're working hard at <strong style="color: var(--primary-deep-teal);">OptriOnAI</strong> to bring you an innovative experience.
+            Stay tuned for our launch – we promise it will be worth the wait!
+        </p>
+        <p>
+            Get ready for cutting-edge solutions that leverage <span class="accent-text">precision</span> and <span class="accent-text">intelligence</span>.
+        </p>
+
+        <div class="contact-info">
+            <h3 class="contact-heading">Contact Us</h3>
+            <p class="phone-number">
+                Let's Connect: <a href="tel:+905528215237" class="contact-link">+90 552 821 52 37</a>
+            </p>
+            <!-- You can add an email here too if you like -->
+            <!-- <p class="email-address">
+                Email: <a href="mailto:info@optrionai.com" class="contact-link">info@optrionai.com</a>
+            </p> -->
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; <span id="currentYear"></span> OptriOnAI. All rights reserved.
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
