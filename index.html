@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPTRIONAI- Coming Soon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&family=Roboto:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <title>OptrionAI - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
             --primary-deep-teal: #005A72;
@@ -16,222 +15,193 @@
             --neutral-light-gray: #F4F6F8;
             --neutral-medium-gray: #A3AFC0;
             --neutral-dark-gray: #4A5864;
-
-            --font-headings: 'Poppins', sans-serif;
-            --font-subheadings: 'Source Sans Pro', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-            --font-code: 'JetBrains Mono', monospace;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            font-family: var(--font-body);
+            font-family: 'Roboto', sans-serif;
             background-color: var(--neutral-light-gray);
-            color: var(--neutral-medium-gray);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-            overflow-x: hidden;
+            color: var(--neutral-dark-gray);
         }
 
-        .container {
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-navy);
+        }
+
+        .subheading {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--primary-deep-teal);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-bright-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #00a8b6;
+            transform: translateY(-2px);
+        }
+
+        .card {
             background-color: white;
-            padding: 40px 50px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            max-width: 600px;
-            width: 100%;
-            animation: fadeInScaleUp 0.8s ease-out forwards;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
-        @keyframes fadeInScaleUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .logo {
-            max-width: 250px;
-            width: 70%;
-            height: auto;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-family: var(--font-headings);
-            font-size: 2.8rem;
-            color: var(--secondary-navy);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        h2.subtitle {
-            font-family: var(--font-subheadings);
-            font-size: 1.5rem;
-            color: var(--primary-deep-teal);
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--neutral-dark-gray);
-            margin-bottom: 20px; /* Adjusted margin for paragraph spacing */
-        }
-
-        .highlight {
-            color: var(--primary-bright-cyan);
-            font-weight: 500;
-        }
-
-        .accent-text {
-            color: var(--accent-orange);
-            font-weight: bold;
-        }
-
-        .contact-info {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--neutral-light-gray); /* Subtle separator */
-        }
-
-        .contact-heading {
-            font-family: var(--font-subheadings);
-            font-size: 1.3rem;
-            color: var(--secondary-navy);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .phone-number {
-            font-size: 1.1rem;
-            color: var(--neutral-dark-gray);
-            margin-bottom: 0; /* Remove bottom margin if it's the last item in contact-info */
-        }
-
-        .contact-link {
-            color: var(--primary-bright-cyan);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
-            color: var(--primary-deep-teal);
+        .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         .footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: var(--neutral-medium-gray);
+            background-color: var(--secondary-navy);
         }
 
-        .footer a {
-            color: var(--primary-deep-teal);
-            text-decoration: none;
-            font-weight: 500;
+        .logo-container {
+            height: 40px;
+            display: flex;
+            align-items: center;
         }
 
-        .footer a:hover {
+        .logo-image {
+            height: 100%;
+            max-height: 40px;
+            width: auto;
+        }
+
+        .contact-card {
+            border-left: 4px solid var(--primary-bright-cyan);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
             color: var(--primary-bright-cyan);
-            text-decoration: underline;
         }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 25px;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            h2.subtitle {
-                font-size: 1.3rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            .logo {
-                max-width: 200px;
-            }
-            .contact-heading {
-                font-size: 1.2rem;
-            }
-            .phone-number {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            h2.subtitle {
-                font-size: 1.1rem;
-            }
-            p {
-                font-size: 0.95rem;
-            }
-            .logo {
-                max-width: 180px;
-            }
-             .contact-heading {
-                font-size: 1.1rem;
-            }
-            .phone-number {
-                font-size: 0.95rem;
-            }
-        }
-
     </style>
 </head>
 <body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Simplified Navigation Bar -->
+        <nav class="navbar py-4 px-6">
+            <div class="logo-container">
+                <img src="./images/optrionai.png" alt="OptrionAI Logo" class="logo-image">
+            </div>
+        </nav>
 
-    <div class="container">
-        <img src="./images/optrionai.png" alt="OPTRIONAI Logo" class="logo">
-        <h1>Coming Soon!</h1>
-        <h2 class="subtitle">Something <span class="highlight">Amazing</span> is on its Way</h2>
-        <p>
-            We're working hard at <strong style="color: var(--primary-deep-teal);">OPTRIONAI</strong> to bring you an innovative experience.
-            Stay tuned for our launch – we promise it will be worth the wait!
-        </p>
-        <p>
-            Get ready for cutting-edge solutions that leverage <span class="accent-text">precision</span> and <span class="accent-text">intelligence</span>.
-        </p>
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-6 py-12 flex flex-col md:flex-row gap-12 items-center">
+            <!-- Left Column - Main Content -->
+            <div class="w-full md:w-3/5">
+                <div class="mb-8">
+                    <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider mb-4" style="background-color: rgba(0, 194, 209, 0.1); color: var(--primary-bright-cyan);">LAUNCHING SOON</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Coming Soon!</h1>
+                    <h2 class="text-xl md:text-2xl font-medium mb-6" style="color: var(--primary-deep-teal);">Something Amazing is on its Way</h2>
+                    <p class="text-lg mb-6">We're working hard at <span class="font-semibold" style="color: var(--primary-deep-teal);">OPTRIONAI</span> to bring you an innovative experience. Stay tuned for our launch – we promise it will be worth the wait!</p>
+                    <p class="text-lg">Get ready for cutting-edge solutions that leverage precision and intelligence.</p>
+                </div>
 
-        <div class="contact-info">
-            <h3 class="contact-heading">Contact Us</h3>
-            <p class="phone-number">
-                Let's Connect: <a href="tel:+905528215237" class="contact-link">+90 552 821 52 37</a>
-            </p>
-            <!-- You can add an email here too if you like -->
-            <!-- <p class="email-address">
-                Email: <a href="mailto:info@optrionai.com" class="contact-link">info@optrionai.com</a>
-            </p> -->
-        </div>
-    </div>
+                <!-- Notification Form -->
+                <div class="card p-6 mb-8">
+                    <h3 class="text-lg font-semibold mb-3">Stay Updated</h3>
+                    <p class="text-neutral-dark-gray mb-4">Subscribe to receive updates and be the first to know when we launch.</p>
+                    <form class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-lg border border-neutral-medium-gray focus:outline-none focus:ring-2 focus:ring-primary-bright-cyan">
+                        <button type="submit" class="btn-primary text-white font-medium px-6 py-3 rounded-lg shadow-md hover:shadow-lg">
+                            Notify Me
+                        </button>
+                    </form>
+                </div>
+            </div>
 
-    <div class="footer">
-        &copy; <span id="currentYear"></span> OPTRIONAI. All rights reserved.
+            <!-- Right Column - Contact Information -->
+            <div class="w-full md:w-2/5">
+                <div class="card p-6">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+                    <p class="text-neutral-dark-gray mb-8">Have questions? We'd love to hear from you!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="contact-card bg-neutral-light-gray p-4 pl-6 rounded">
+                            <div class="flex items-start">
+                                <div class="mr-4" style="color: var(--primary-bright-cyan);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium mb-1">Let's Connect</h4>
+                                    <p class="text-neutral-dark-gray">+90 552 821 52 37</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card bg-neutral-light-gray p-4 pl-6 rounded">
+                            <div class="flex items-start">
+                                <div class="mr-4" style="color: var(--primary-bright-cyan);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium mb-1">Email Us</h4>
+                                    <p class="text-neutral-dark-gray">hairumossa@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card bg-neutral-light-gray p-4 pl-6 rounded">
+                            <div class="flex items-start">
+                                <div class="mr-4" style="color: var(--primary-bright-cyan);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium mb-1">Location</h4>
+                                    <p class="text-neutral-dark-gray">Istanbul, Turkey</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </main>
+
+        <!-- Simplified Footer -->
+        <footer class="footer py-6 px-6 text-white mt-auto">
+            <div class="container mx-auto">
+                <div class="flex justify-center items-center mb-4">
+                    <div class="logo-container">
+                        <img src="./images/optrionai.png" alt="OptrionAI Logo" class="logo-image">
+                    </div>
+                </div>
+                <div class="text-center text-sm text-neutral-medium-gray">
+                    <p>© 2025 OptrionAI. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Form submission (prevent default)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Thank you for subscribing! We will notify you when we launch.');
+                this.reset();
+            }
+        });
     </script>
-
 </body>
 </html>
